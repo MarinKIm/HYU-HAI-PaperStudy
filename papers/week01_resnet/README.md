@@ -95,6 +95,10 @@ Add skip connection
 
 ReLU
 
+<img width="332" height="736" alt="Image" src="https://github.com/user-attachments/assets/eabfb533-f1a8-4a42-a34f-2f70f235f5c5" />
+
+</ div>
+
 The skip connection allows the network to directly propagate information and gradients.
 
 ---
