@@ -58,17 +58,41 @@ Input x
 </div>
 
 Conv
+
 ↓
+
+</div>
+
 BatchNorm
+
 ↓
+
+</div>
+
 ReLU
+
 ↓
+
+</div>
+
 Conv
+
 ↓
+
+</div>
+
 BatchNorm
+
 ↓
+
+</div>
+
 Add skip connection
+
 ↓
+
+</div>
+
 ReLU
 
 The skip connection allows the network to directly propagate information and gradients.
