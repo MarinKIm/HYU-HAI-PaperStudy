@@ -124,10 +124,11 @@ Dataset: ImageNet
 
 ResNet achieved state-of-the-art performance:
 
-ResNet-152
-Top-5 error: 3.57%
 
 <img width="380" height="154" alt="Image" src="https://github.com/user-attachments/assets/14f1347e-e563-4d80-aad8-a413f19b551c" />
+
+ResNet-152
+Top-5 error: 3.57%
 
 The model won **1st place in the ImageNet 2015 classification challenge**.
 
