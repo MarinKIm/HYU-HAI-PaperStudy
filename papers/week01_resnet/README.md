@@ -15,6 +15,7 @@ Deep neural networks tend to perform better as depth increases.
 However, simply stacking more layers often leads to **degradation**, where deeper networks produce higher training error.
 <img width="579" height="205" alt="Image" src="https://github.com/user-attachments/assets/a948a004-c9ac-44c7-ae2e-6f7069e55d12" />
 
+
 This paper introduces **Residual Learning**, a technique that allows very deep networks to be trained effectively.
 
 The key idea is to learn a residual function instead of the original mapping.
