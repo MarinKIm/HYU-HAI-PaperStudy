@@ -120,10 +120,14 @@ Deeper versions use **bottleneck residual blocks** to reduce computational cost.
 
 Dataset: ImageNet
 
+<img width="522" height="171" alt="Image" src="https://github.com/user-attachments/assets/83692484-0bd0-4cf8-8edf-4c47dbeb1e73" />
+
 ResNet achieved state-of-the-art performance:
 
 ResNet-152
 Top-5 error: 3.57%
+
+<img width="380" height="154" alt="Image" src="https://github.com/user-attachments/assets/14f1347e-e563-4d80-aad8-a413f19b551c" />
 
 The model won **1st place in the ImageNet 2015 classification challenge**.
 
@@ -156,22 +160,6 @@ This demonstrates that ResNet produces significantly stronger visual representat
 3. Enabled training of 100+ layer CNNs
 4. Achieved state-of-the-art results on ImageNet
 5. Became the backbone of modern computer vision models
-
----
-
-# Repository Structure
-
-paper/
-Detailed study notes
-
-implementation/
-PyTorch implementation of ResNet
-
-experiments/
-Experiments comparing ResNet with plain CNN
-
-figures/
-Illustrations and diagrams from the paper
 
 ---
 
