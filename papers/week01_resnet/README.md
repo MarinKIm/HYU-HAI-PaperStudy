@@ -21,6 +21,9 @@ This paper introduces **Residual Learning**, a technique that allows very deep n
 
 The key idea is to learn a residual function instead of the original mapping.
 
+<img width="208" height="126" alt="Image" src="https://github.com/user-attachments/assets/152c1508-be41-4278-93d4-d5d472ddf4fc" />
+</ div>
+
 H(x) → F(x) = H(x) − x
 
 Thus the output becomes:
