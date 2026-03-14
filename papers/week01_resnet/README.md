@@ -52,8 +52,11 @@ Residual learning addresses this issue by introducing **skip connections**.
 Core structure of ResNet:
 
 Input x
+</div>
 ↓
+</div>
 Conv
+</div>
 ↓
 BatchNorm
 ↓
