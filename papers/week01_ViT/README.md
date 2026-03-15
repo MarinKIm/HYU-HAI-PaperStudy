@@ -16,7 +16,10 @@ Traditional image models relied on CNNs, but ViT divides an image into patches a
 
 <p>The overall pipeline of Vision Transformer is as follows.</p>
 
-<img width="436" height="240" alt="Image" src="https://github.com/user-attachments/assets/23222838-508f-486b-ade7-3fb7923477e5" />
+<p align="center">
+<img width="800" alt="ViT Architecture"
+src="https://github.com/user-attachments/assets/23222838-508f-486b-ade7-3fb7923477e5">
+</p>
 
 <pre>
 Image
@@ -42,7 +45,10 @@ Image Classification
 The key idea is to treat an image like a sequence of words.
 </p>
 
-<img width="530" height="113" alt="Image" src="https://github.com/user-attachments/assets/ee58b9c8-e9e0-4a53-869d-9e58bfb7f8bc" />
+<p align="center">
+<img width="900" alt="ViT Patch Example"
+src="https://github.com/user-attachments/assets/ee58b9c8-e9e0-4a53-869d-9e58bfb7f8bc">
+</p>
 
 
 <hr>
