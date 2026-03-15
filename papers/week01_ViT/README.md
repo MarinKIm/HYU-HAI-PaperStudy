@@ -1,12 +1,11 @@
 <h1>Vision Transformer (ViT) Explained</h1>
 
 <p>
-Vision Transformer (ViT) is a model that processes images using the Transformer architecture.
+Vision Transformer is a model that processes images using the Transformer architecture.
 Traditional image models relied on CNNs, but ViT divides an image into patches and feeds them into a Transformer.
 </p>
 
 <p><b>Representative Paper:</b></p>
-
 <ul>
 <li>An Image is Worth 16×16 Words: Transformers for Image Recognition at Scale</li>
 </ul>
@@ -15,7 +14,7 @@ Traditional image models relied on CNNs, but ViT divides an image into patches a
 
 <h2>1. Overall Architecture</h2>
 
-<p>The overall pipeline of Vision Transformer is as follows:</p>
+<p>The overall pipeline of Vision Transformer is as follows.</p>
 
 <pre>
 Image
@@ -45,7 +44,7 @@ The key idea is to treat an image like a sequence of words.
 
 <h2>2. Image → Patch</h2>
 
-<p>Input image:</p>
+<p>Input image</p>
 
 <pre>
 x ∈ R^(H × W × C)
@@ -59,7 +58,7 @@ x ∈ R^(H × W × C)
 
 <p>The image is divided into <b>P × P patches</b>.</p>
 
-<p>Number of patches:</p>
+<p>Number of patches</p>
 
 <pre>
 N = HW / P²
@@ -107,19 +106,17 @@ patch embedding
 </pre>
 
 <p>
-Since the Transformer cannot understand order information by itself, position embeddings are added.
+Since the Transformer cannot understand order information by itself, position embedding is added.
 </p>
 
 <hr>
 
 <h2>4. Transformer Encoder</h2>
 
-<p>The Transformer encoder consists of two main blocks:</p>
+<p>The Transformer encoder consists of two blocks.</p>
 
-<ul>
-<li><b>Multi-head Self Attention</b></li>
-<li><b>MLP Block</b></li>
-</ul>
+<p>1️⃣ Multi-head Self Attention</p>
+<p>2️⃣ MLP Block</p>
 
 <p>This structure is repeated <b>L times</b>.</p>
 
@@ -152,7 +149,7 @@ patch1 ↔ patchN
 </pre>
 
 <p>
-This allows the model to learn <b>global relationships</b> in the image.
+In other words, it learns global relationships within the image.
 </p>
 
 <hr>
@@ -176,7 +173,7 @@ Linear
 <p><b>Role of MLP</b></p>
 
 <ul>
-<li>Apply non-linear transformation to features obtained from attention</li>
+<li>Apply a non-linear transformation to features obtained from attention</li>
 <li>Make the representation more expressive</li>
 </ul>
 
@@ -185,14 +182,14 @@ Linear
 <h2>7. Image Representation (Eq.4)</h2>
 
 <p>
-The CLS token from the last Transformer layer is used as the image representation.
+The CLS token from the final Transformer layer is used as the image representation.
 </p>
 
 <pre>
 y = LN(z_L^0)
 </pre>
 
-<p>Here,</p>
+<p>Here</p>
 
 <pre>
 z_L^0
@@ -207,7 +204,7 @@ This vector summarizes the information of the entire image.
 
 <h2>8. Classification</h2>
 
-<p><b>Final pipeline</b></p>
+<p><b>Final structure</b></p>
 
 <pre>
 CLS vector
@@ -229,7 +226,7 @@ car
 
 <h2>9. Key Ideas</h2>
 
-<p>Main concepts of Vision Transformer:</p>
+<p>Main concepts of Vision Transformer</p>
 
 <ol>
 <li>Divide the image into patches</li>
@@ -259,13 +256,13 @@ car
 </tr>
 
 <tr>
-<td>Strong inductive bias</td>
-<td>Weak inductive bias</td>
+<td>Inductive bias strong</td>
+<td>Inductive bias weak</td>
 </tr>
 
 </table>
 
-<p><b>One-sentence summary</b></p>
+<p><b>Key sentence</b></p>
 
 <p>
 Vision Transformer converts an image into a patch sequence and processes it using a Transformer.
