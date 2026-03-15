@@ -16,6 +16,8 @@ Traditional image models relied on CNNs, but ViT divides an image into patches a
 
 <p>The overall pipeline of Vision Transformer is as follows.</p>
 
+<img width="436" height="240" alt="Image" src="https://github.com/user-attachments/assets/23222838-508f-486b-ade7-3fb7923477e5" />
+
 <pre>
 Image
  ↓
