@@ -40,6 +40,9 @@ Image Classification
 The key idea is to treat an image like a sequence of words.
 </p>
 
+<img width="530" height="113" alt="Image" src="https://github.com/user-attachments/assets/ee58b9c8-e9e0-4a53-869d-9e58bfb7f8bc" />
+
+
 <hr>
 
 <h2>2. Image → Patch</h2>
