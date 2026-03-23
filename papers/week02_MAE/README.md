@@ -5,7 +5,7 @@ HE, Kaiming, et al. Masked autoencoders are scalable vision learners. In: Procee
 
 ---
 
-## 🧠 Author's Intention
+## Author's Intention
 
 MAE is a scalable self-supervised model in the CV field.
 
@@ -25,11 +25,11 @@ However, in CV, transformers are being applied somewhat forcefully. This require
 
 Let's think about what differences between NLP and CV cause differences in MAE.
 
-<img width="460" height="284" alt="Image" src="https://github.com/user-attachments/assets/d8171274-f75b-42d7-bf54-82390795024e" />
-
 ---
 
 ## Basic Structure of MAE
+
+<img width="460" height="284" alt="Image" src="https://github.com/user-attachments/assets/d8171274-f75b-42d7-bf54-82390795024e" />
 
 1. Architecture difference between CNN and BERT
 
@@ -95,7 +95,8 @@ In this section, the architecture and training details are explained.
 
 <img width="470" height="292" alt="Image" src="https://github.com/user-attachments/assets/93fea0fe-7738-41e3-b423-cd3d9039a282" />
 
-Masking  
+[Masking]
+
 ViT divides the entire image into patches, and MAE follows the same process.
 
 Before input, patches are randomly sampled at a high ratio and masked (removed).
@@ -110,7 +111,8 @@ It also prevents the task from being solved too easily using neighboring patches
 
 <img width="470" height="292" alt="Image" src="https://github.com/user-attachments/assets/68ca382f-33fa-48ed-ad69-0c9d599a2653" />
 
-encoder  
+[encoder]
+
 The MAE encoder is the same as ViT, but only the unmasked patch 'subset' is used as input.
 
 Both input and output consist of a small portion (about 25%) of the patches from the full image.
@@ -125,7 +127,8 @@ This allows training very large encoders while using only a fraction of computat
 
 <img width="470" height="292" alt="Image" src="https://github.com/user-attachments/assets/ccfa5a15-593f-4741-a4a5-cc46b7d2c991" />
 
-decoder  
+[decoder]
+
 The MAE decoder takes both unmasked and masked patches, i.e., the 'full set', as input.
 
 As shown in the figure, the encoder output of 8 patches is expanded back to 25.
@@ -143,7 +146,8 @@ It is designed to be smaller, lighter, and shallower than the encoder (lightweig
 
 <img width="470" height="292" alt="Image" src="https://github.com/user-attachments/assets/fd04085e-dab2-4bd9-b668-c7057607cd55" />
 
-target  
+[target]
+  
 Predict the pixel values of each masked patch.
 
 The decoder output reconstructs the image.
