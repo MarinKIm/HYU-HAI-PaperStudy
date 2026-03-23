@@ -1,4 +1,4 @@
-# 📄 MAE (Masked Autoencoders)
+# MAE (Masked Autoencoders)
 
 Masked Autoencoders Are Scalable Vision Learners  
 HE, Kaiming, et al. Masked autoencoders are scalable vision learners. In: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2022. p. 16000-16009.
