@@ -147,7 +147,7 @@ It is designed to be smaller, lighter, and shallower than the encoder (lightweig
 <img width="470" height="292" alt="Image" src="https://github.com/user-attachments/assets/fd04085e-dab2-4bd9-b668-c7057607cd55" />
 
 [target]
-  
+
 Predict the pixel values of each masked patch.
 
 The decoder output reconstructs the image.
@@ -157,3 +157,122 @@ As the loss function, MSE is computed in pixel space.
 Like BERT, the loss is calculated only on masked patches.
 
 (This means unmasked patches are not used in loss calculation.)
+
+## Results Analysis
+
+---
+
+### 1. ImageNet Experiments
+
+---
+
+#### 1-1. Baseline: ViT-L/16
+
+<img width="438" height="60" alt="Image" src="https://github.com/user-attachments/assets/ba8b5d8a-42fb-4afe-98fc-51d37999ee14" />
+
+**accuracy**  
+
+---
+
+<img width="438" height="237" alt="Image" src="https://github.com/user-attachments/assets/7f0ae396-a89f-452c-bd92-97cbf1219e55" />
+
+**pre-training setting**  
+Pre-training was performed on ImageNet-1K using a reconstruction task with self-supervised learning,
+
+and fine-tuning was performed on ImageNet-1K using a recognition task with supervised learning.
+
+MAE only used 50 epochs for fine-tuning. (In contrast, ViT-L/16 used 200 epochs.)
+
+---
+
+<img width="438" height="473" alt="Image" src="https://github.com/user-attachments/assets/6ccaa601-5c36-4766-80a3-29449f339253" />
+
+**fine-tuning setting**  
+Fine-tuning and linear probing use separate recipes.
+
+---
+
+**fine-tuning vs linear probing**  
+Let’s examine the difference between fine-tuning and linear probing using MAE.
+
+Fine-tuning trains both the pre-trained encoder and the MLP head,
+
+while linear probing freezes the pre-trained encoder weights and trains only the MLP head.
+
+---
+
+#### 1-2. Masking ratio
+
+**masking ratio**  
+A masking ratio of 75% showed the best performance for both fine-tuning and linear probing.
+
+This is in strong contrast to the typical 15% used in BERT.
+
+As explained earlier, this can be interpreted as a result of the difference in information density between language and images.
+
+Fine-tuning and linear probing show different trends depending on the ratio.
+
+This is because pre-training is a lower-level task based on pixel reconstruction.
+
+---
+
+#### 1-3. Decoder design
+
+**decoder design**  
+The depth and width of the decoder were not very important for fine-tuning.
+
+This can be interpreted as the decoder being removed during testing, and only the encoder is used.
+
+Therefore, making it lightweight is beneficial, and the authors made it as light as possible.
+
+As the depth of the decoder becomes shallower, the encoder tends to specialize more in the reconstruction task, while recognition performance is not affected.
+
+---
+
+#### 1-4. Mask token
+
+**mask token**  
+There is about a 3.3× difference in FLOPs depending on whether mask tokens are used in the encoder or not.
+
+(This is because 75% is masked, which is easy to understand even with simple calculation.)
+
+Therefore, the authors did not include mask tokens in the encoder and trained efficiently.
+
+An interesting point is that the accuracy of linear probing improved significantly.
+
+This part is not very clear...
+
+---
+
+#### 1-5. Augmentation, Schedule
+
+**augmentation**  
+In the case of augmentation, accuracy slightly improved with crop and random-size, but there is no significant difference even without it.
+
+---
+
+**schedule**  
+The results in this paper are basically based on training up to 800 epochs.
+
+However, even when training up to 1600 epochs, it does not show saturation.
+
+---
+
+#### 1-6. Compare with previous results
+
+**compare**  
+The results of MAE (fine-tuning) were compared with other self-supervised ViT models.
+
+MAE achieved 87.8% accuracy when fine-tuned with image size 448 (best).
+
+It slightly outperforms previous models.
+
+This model is based only on a vanilla ViT, and more advanced models may achieve better results (e.g., BEiT, DeiT, DaViT, etc.).
+
+---
+
+### 2. Transfer Learning Experiments
+
+- object detection and segmentation  
+- semantic segmentation  
+- another classification
