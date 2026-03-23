@@ -285,4 +285,6 @@ This model is based only on a vanilla ViT, and more advanced models may achieve 
 
 ---
 
-### 2. Transfer Learning Experiments
+[출처]
+
+https://davidlds.tistory.com/31#google_vignette
