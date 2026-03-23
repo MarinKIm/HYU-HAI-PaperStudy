@@ -192,6 +192,8 @@ Fine-tuning and linear probing use separate recipes.
 
 ---
 
+<img width="438" height="304" alt="Image" src="https://github.com/user-attachments/assets/5aad44d4-a7d9-429e-82ff-e3231742d97c" />
+
 **fine-tuning vs linear probing**  
 Let’s examine the difference between fine-tuning and linear probing using MAE.
 
@@ -202,6 +204,8 @@ while linear probing freezes the pre-trained encoder weights and trains only the
 ---
 
 #### 1-2. Masking ratio
+
+<img width="438" height="277" alt="Image" src="https://github.com/user-attachments/assets/bded044f-c18f-4f06-8ab8-22014699c107" />
 
 **masking ratio**  
 A masking ratio of 75% showed the best performance for both fine-tuning and linear probing.
@@ -218,6 +222,8 @@ This is because pre-training is a lower-level task based on pixel reconstruction
 
 #### 1-3. Decoder design
 
+<img width="603" height="175" alt="Image" src="https://github.com/user-attachments/assets/c135ef9b-5001-417b-b66d-3eed98eabcb0" />
+
 **decoder design**  
 The depth and width of the decoder were not very important for fine-tuning.
 
@@ -230,6 +236,8 @@ As the depth of the decoder becomes shallower, the encoder tends to specialize m
 ---
 
 #### 1-4. Mask token
+
+<img width="414" height="232" alt="Image" src="https://github.com/user-attachments/assets/731254f5-fea4-4a12-9608-3b698f54352f" />
 
 **mask token**  
 There is about a 3.3× difference in FLOPs depending on whether mask tokens are used in the encoder or not.
@@ -246,10 +254,14 @@ This part is not very clear...
 
 #### 1-5. Augmentation, Schedule
 
+<img width="447" height="232" alt="Image" src="https://github.com/user-attachments/assets/17c969b8-3ff3-45b5-a1a4-67ba3b4bdb1c" />
+
 **augmentation**  
 In the case of augmentation, accuracy slightly improved with crop and random-size, but there is no significant difference even without it.
 
 ---
+
+<img width="447" height="270" alt="Image" src="https://github.com/user-attachments/assets/22fb88f2-0bc2-4e62-92fb-b2e8ed73f2bf" />
 
 **schedule**  
 The results in this paper are basically based on training up to 800 epochs.
@@ -259,6 +271,8 @@ However, even when training up to 1600 epochs, it does not show saturation.
 ---
 
 #### 1-6. Compare with previous results
+
+<img width="505" height="209" alt="Image" src="https://github.com/user-attachments/assets/d9199a2b-5bf6-456c-b938-45a7f2f90021" />
 
 **compare**  
 The results of MAE (fine-tuning) were compared with other self-supervised ViT models.
@@ -272,7 +286,3 @@ This model is based only on a vanilla ViT, and more advanced models may achieve 
 ---
 
 ### 2. Transfer Learning Experiments
-
-- object detection and segmentation  
-- semantic segmentation  
-- another classification
