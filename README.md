@@ -17,10 +17,11 @@ Each week I read one research paper and summarize:
 
 ## Papers
 
-| Week | Paper                                        | Topic                   |
-| ---- | -------------------------------------------- | -----------             |
-| 1-1  | Deep Residual Learning for Image Recognition | CNN / Residual learning |
-| 1-2  | AN IMAGE IS WORTH 16X16 WORDS                | CNN                     |
+| Week | Paper                                            | Topic                   |
+| ---- | -------------------------------------------------| ------------------------|
+| 1-1  | Deep Residual Learning for Image Recognition     | CNN / Residual learning |
+| 1-2  | AN IMAGE IS WORTH 16X16 WORDS                    | CNN                     |
+| 2-1  | Masked Autoencoders Are Scaleable Vision Learners| VIT / MAE               |
 
 ---
 
